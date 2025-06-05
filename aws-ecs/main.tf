@@ -400,6 +400,10 @@ resource "aws_ecs_task_definition" "id_web_task" {
         value = var.bold_services_hosting_environment
       },
       {
+        name  = "DEPLOY_MODE"
+        value = var.deploy_mode
+      },
+      {
         name  = "APP_BASE_URL"
         value = var.app_base_url != "" ? var.app_base_url : "http://${aws_lb.ecs_alb.dns_name}"
       },
@@ -481,6 +485,10 @@ resource "aws_ecs_task_definition" "id_ums_task" {
       {
         name  = "BOLD_SERVICES_HOSTING_ENVIRONMENT"
         value = var.bold_services_hosting_environment
+      },
+      {
+        name  = "DEPLOY_MODE"
+        value = var.deploy_mode
       },
       {
         name  = "BOLD_SERVICES_USE_SITE_IDENTIFIER"
@@ -602,7 +610,11 @@ resource "aws_ecs_task_definition" "id_api_task" {
       {
         name  = "BOLD_SERVICES_HOSTING_ENVIRONMENT"
         value = var.bold_services_hosting_environment
-      }
+      },
+      {
+        name  = "DEPLOY_MODE"
+        value = var.deploy_mode
+      },
     ]
     essential = true
     cpu       = var.task_cpu

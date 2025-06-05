@@ -5,6 +5,7 @@ environment = "demo"
 
 # Bold BI Deployment Configuration
 bold_services_hosting_environment = "k8s"
+deploy_mode = "ecs_multi_container"
 
 # These are the default client libraries used in Bold BI. Update as needed.
 install_optional_libs = "mongodb,mysql,influxdb,snowflake,oracle,clickhouse,google"  

@@ -42,6 +42,13 @@ variable "bold_services_hosting_environment" {
   type        = string
 }
 
+# Bold BI Application Variables
+variable "deploy_mode" {
+  description = "The environment where Bold BI services are hosted (e.g., k8s)"
+  default     = "ecs-multicontainer"
+  type        = string
+}
+
 variable "app_base_url" {
   description = "The base URL for the Bold BI application (e.g., https://example.com). If left empty, the script will use the ALB load balancer DNS for application hosting."
   type        = string
